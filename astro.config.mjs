@@ -19,8 +19,8 @@ const whenExternalScripts = (items = []) =>
   SITE.googleAnalyticsId ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  site: SITE.origin,
-  base: SITE.basePathname,
+  site: 'https://www.minvolai.com', //SITE.origin,
+  base:   SITE.basePathname,
   trailingSlash: SITE.trailingSlash ? 'always' : 'never',
 
   output: 'static',
