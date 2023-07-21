@@ -5,11 +5,11 @@ const CONFIG = {
 
   origin: 'https://astrowind.vercel.app',
   basePathname: '/',
-  trailingSlash: false,
+  trailingSlash: true,
 
-  title: 'AstroWind — Free template for create a website with Astro + Tailwind CSS',
+  title: 'minvolai.com',
   description:
-    '🚀 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.',
+    'Sharmi writes here',
   defaultImage: defaultImage,
 
   defaultTheme: 'system', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
@@ -25,14 +25,14 @@ const CONFIG = {
   }),
 
   googleAnalyticsId: false, // or "G-XXXXXXXXXX",
-  googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
+  //googleSiteVerificationId: , //'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
 
   blog: {
     disabled: false,
     postsPerPage: 4,
 
     post: {
-      permalink: '/%slug%', // Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      permalink: '/%slug%/', // Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
       noindex: false,
       disabled: false,
     },

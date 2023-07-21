@@ -7,6 +7,7 @@ tags:
   - astro
   - tailwind css
   - theme
+draft: true
 canonical: https://astrowind.vercel.app/how-to-customize-astrowind-to-your-brand
 ---
 
