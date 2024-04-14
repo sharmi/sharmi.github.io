@@ -1,9 +1,9 @@
 import defaultImage from './assets/images/default.png';
 
 const CONFIG = {
-  name: 'AstroWind',
+  name: 'MinVolai',
 
-  origin: 'https://astrowind.vercel.app',
+  origin: 'https://www.minvolai.com',
   basePathname: '/',
   trailingSlash: true,
 
@@ -29,7 +29,7 @@ const CONFIG = {
 
   blog: {
     disabled: false,
-    postsPerPage: 4,
+    postsPerPage: 10,
 
     post: {
       permalink: '/%slug%/', // Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
