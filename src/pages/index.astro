@@ -1,50 +1,36 @@
 ---
-import { SITE, BLOG } from '~/config.mjs';
-
-import Layout from '~/layouts/PageLayout.astro';
-import BlogList from '~/components/blog/List.astro';
-import Headline from '~/components/blog/Headline.astro';
-import Pagination from '~/components/blog/Pagination.astro';
-// import PostTags from "~/components/blog/Tags.astro";
-
-import { fetchPosts } from '~/utils/blog';
-// import { findTags, findCategories } from '~/utils/blog';
-import { BLOG_BASE } from '~/utils/permalinks';
-
-export async function getStaticPaths({ paginate }) {
-  if (BLOG?.disabled || BLOG?.list?.disabled) return [];
-  return paginate(await fetchPosts(), {
-    params: { blog: BLOG_BASE || undefined },
-    pageSize: BLOG.postsPerPage,
-  });
-}
-
-const { page } = Astro.props;
-const currentPage =1;
-
-// const allCategories = await findCategories();
-// const allTags = await findTags();
-
-const meta = {
-  title: `Blog${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
-  description: SITE.description,
-  noindex: BLOG?.list?.noindex || currentPage > 1,
-  ogType: 'blog',
-};
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<Layout {meta}>
-  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
-    <Headline
-      subtitle="You will find my take on tech, documenting some of my tiny epiphanies, and hard to debug errors I hope to never get stuck on again."
-    >
-      My Thoughts
-    </Headline>
-    <BlogList posts={page.data} />
-    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
-    <!--
-      <PostTags tags={allCategories} class="mb-2" title="Search by Categories:" isCategory />
-      <PostTags tags={allTags}  title="Search by Tags:" />
-    -->
-  </section>
-</Layout>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>🧑‍🚀 Hello, Reader!</h1>
+			<p> Hi there! I'm <strong>Sharmi</strong>, a founder, a programmer turned marketer.</p>
+			<p>
+				Welcome to the my online residence.
+			</p>
+			<p>
+				These are blogposts that I have written over the years. So your will find blogs on varied topics. I hope you find them useful. 
+			</p>
+			<p>You will find everything that I found interesting over the years here.</p>
+
+			<h3>My Current Activities</h3>
+			<ul>
+				<li>Building <a href="https://reputebee.com">ReputeBee</a>. This takes up most of my time :)</li>
+				<li>Organizing the Book Club at Product Marketing Alliance </li>
+				<li>Sharing my thoughts at <a href="https://www.linkedin.com/in/sharm1la/">LinkedIn</a></li>
+			</ul>
+
+		</main>
+		<Footer />
+	</body>
+</html>
